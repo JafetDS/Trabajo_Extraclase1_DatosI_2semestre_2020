@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="509.0" style="-fx-background-color: skyblue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="ip_in" layoutX="128.0" layoutY="12.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="91.0" layoutY="16.0" text="IP">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="Caja_de_texto" layoutX="34.0" layoutY="396.0" prefHeight="46.0" prefWidth="427.0" wrapText="true" />
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="188.0" layoutY="89.0" prefHeight="32.0" prefWidth="118.0" text="MENSAJE" textAlignment="CENTER" textFill="#25cc81">
+         <font>
+            <Font name="Comic Sans MS Bold" size="23.0" />
+         </font>
+         <effect>
+            <DropShadow height="6.17" radius="2.585" spread="0.05" width="6.17" />
+         </effect>
+      </Label>
+      <Button fx:id="ENVIAR" layoutX="34.0" layoutY="457.0" mnemonicParsing="false" onAction="#enviar" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #24cd86;" text="ENVIAR" textAlignment="CENTER" textFill="#0d86c3">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="puerto_in" layoutX="128.0" layoutY="54.0" prefHeight="25.0" prefWidth="239.0" promptText="Only int" text="1" />
+      <ScrollPane fx:id="Spane" layoutX="33.0" layoutY="134.0" prefHeight="246.0" prefWidth="427.0">
+         <content>
+            <VBox fx:id="vbox" prefHeight="310.0" prefWidth="411.0" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="84.0" layoutY="58.0" text="Port">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="Conectar" layoutX="398.0" layoutY="53.0" mnemonicParsing="false" onAction="#conectar" style="-fx-background-color: #24cd86;" text="Conectar">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="398.0" layoutY="7.0" mnemonicParsing="false" onAction="#Other_Windows" prefHeight="37.0" prefWidth="61.0" style="-fx-background-color: orange;" text="+">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button id="#feliz" layoutX="304.0" layoutY="453.0" mnemonicParsing="false" onAction="#send_Emojis" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: Skyblue;">
+         <graphic>
+            <ImageView id="#feliz" fitHeight="37.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Emojis/feliz.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="4.0" />
+         </font>
+      </Button>
+      <Button id="#enojado" layoutX="357.0" layoutY="452.0" mnemonicParsing="false" onAction="#send_Emojis" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: Skyblue;">
+         <graphic>
+            <ImageView id="#enojado" fitHeight="37.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Emojis/enojado.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="4.0" />
+         </font>
+      </Button>
+      <Button id="#infeliz" layoutX="419.0" layoutY="453.0" mnemonicParsing="false" onAction="#send_Emojis" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: Skyblue;">
+         <graphic>
+            <ImageView id="#infeliz" fitHeight="37.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Emojis/infeliz.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="1.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
