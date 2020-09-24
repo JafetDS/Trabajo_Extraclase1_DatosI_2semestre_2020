@@ -130,7 +130,7 @@ public class Controller implements Initializable,Runnable{
     @FXML
     private void conectar(ActionEvent event) {
         try {
-            ServerSocket server=new ServerSocket(Integer.parseInt(puerto_in.getText()));
+            ServerSocket server1=new ServerSocket(Integer.parseInt(puerto_in.getText()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -140,7 +140,7 @@ public class Controller implements Initializable,Runnable{
             public void run() {
                 while(true) {
                     try {
-                        mensaje = Sockets.newServerlistening(server);
+                        mensaje = Sockets.newServerlistening(server1);
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
