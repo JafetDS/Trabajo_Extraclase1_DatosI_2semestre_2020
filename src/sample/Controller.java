@@ -1,5 +1,6 @@
 package sample;
 
+import Log.Log;
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
 
@@ -14,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import java.net.URL;
+import java.util.logging.Level;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -75,6 +77,9 @@ public class Controller implements Initializable,Runnable{
         Emoji emoji=new Emoji(button.getId());
         try {
             emoji.setEmoji();
+            Log my_log = new Log ("C:/UNIVERSIDAD/Datos1_II2020/Trabajo_Extraclase1_DatosI_2semestre_2020/Trabajo_Extraclase1_DatosI_2semestre_2020/src/Log/Logs.txt");
+            my_log.logger.setLevel(Level.WARNING);
+            my_log.logger.info("Emoji enviado");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -137,12 +142,20 @@ public class Controller implements Initializable,Runnable{
 
         Thread thread2 = new Thread(new Runnable() {
             @Override
-            public void run() {
+            public void run()  {
                 while(true) {
                     try {
                         mensaje = Sockets.newServerlistening(server1);
 
                     } catch (Exception ex) {
+                        Log my_log = null;
+                        try {
+                            my_log = new Log("C:/UNIVERSIDAD/Datos1_II2020/Trabajo_Extraclase1_DatosI_2semestre_2020/Trabajo_Extraclase1_DatosI_2semestre_2020/src/Log/Logs.txt");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        my_log.logger.setLevel(Level.WARNING);
+                        my_log.logger.warning("No selogro conectar");
                         ex.printStackTrace();
                     }
                 }

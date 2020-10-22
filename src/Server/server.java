@@ -1,8 +1,10 @@
 package Server;
+import Log.Log;
 import sample.Sockets;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.util.logging.Level;
 
 public class server {
 
@@ -22,8 +24,11 @@ public class server {
             @Override
             public void run() {
                 String mensaje;
+
                 while(true) {
                     try {
+                        Log my_log = new Log ("C:/UNIVERSIDAD/Datos1_II2020/Trabajo_Extraclase1_DatosI_2semestre_2020/Trabajo_Extraclase1_DatosI_2semestre_2020/src/Log/Logs.txt");
+                        my_log.logger.setLevel(Level.WARNING);
                         mensaje = Sockets.newServerlistening(server1);
                         String[] arrOfStr = mensaje.split("-", 4);
                         if (mensaje!=null){
@@ -31,6 +36,7 @@ public class server {
                             System.out.println(arrOfStr[2]);
                             System.out.println(mensaje);
                             mensaje = null;
+                            my_log.logger.info("Mensaje resibido");
                         }
                     } catch (Exception ex) {
                         ex.printStackTrace();
