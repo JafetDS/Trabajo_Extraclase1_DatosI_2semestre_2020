@@ -29,6 +29,7 @@ public class server {
                         if (mensaje!=null){
                             Sockets.newSocket(arrOfStr[0],Integer.parseInt(arrOfStr[1]),arrOfStr[2]);
                             System.out.println(arrOfStr[2]);
+                            System.out.println(mensaje);
                             mensaje = null;
                         }
                     } catch (Exception ex) {

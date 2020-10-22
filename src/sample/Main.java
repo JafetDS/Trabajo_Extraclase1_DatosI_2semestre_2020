@@ -33,7 +33,7 @@ public class Main extends Application {//implements Runnable{
 
 
     public static void main(String[] args)  {
-        //Sockets.newSocket("192.168.100.27", 40000,"hello");
+        //127.0.0.1  )Sockets.newSocket("192.168.100.27", 40000,"hello");
         launch(args);
 
 

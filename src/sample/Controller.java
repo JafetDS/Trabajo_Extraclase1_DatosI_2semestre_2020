@@ -68,7 +68,7 @@ public class Controller implements Initializable,Runnable{
     @FXML
     public void send_Emojis(ActionEvent event) throws Exception {
         Button button = (Button) event.getSource();
-        Sockets.newSocket(ip_in.getText(),Integer.parseInt(puerto_in.getText()),button.getId());
+        Sockets.newSocket(ip_in.getText(),30000,ip_in.getText()+"-"+puerto_in.getText()+"-"+button.getId());
         /**
          * Instaciasion de un objeto tipo emoji
          */
@@ -97,7 +97,7 @@ public class Controller implements Initializable,Runnable{
 
     @FXML
     public void enviar(ActionEvent event) throws Exception {
-        Sockets.newSocket(ip_in.getText(), Integer.parseInt(puerto_in.getText()), Caja_de_texto.getText());
+        Sockets.newSocket(ip_in.getText(), 30000, ip_in.getText()+"-"+puerto_in.getText()+"-"+Caja_de_texto.getText());
         Mensaje mensaje1=new Mensaje(Caja_de_texto.getText());
         mostrar_mensaje(mensaje1);
     }
@@ -130,7 +130,7 @@ public class Controller implements Initializable,Runnable{
     @FXML
     private void conectar(ActionEvent event) {
         try {
-            ServerSocket server1=new ServerSocket(Integer.parseInt(puerto_in.getText()));
+            server1=new ServerSocket(Integer.parseInt(puerto_in.getText()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -141,6 +141,7 @@ public class Controller implements Initializable,Runnable{
                 while(true) {
                     try {
                         mensaje = Sockets.newServerlistening(server1);
+
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
